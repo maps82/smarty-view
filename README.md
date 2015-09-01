@@ -54,12 +54,12 @@ $app->run();
 
 This component exposes a custom `path_for` function to your Smarty templates. You can use this function to generate complete URLs to any Slim application named route. This is an example Smarty template:
 
-	{extends "layout.html"}
+	{extends "layout.tpl"}
 
 	{block name="body"}
 	<h1>User List</h1>
 	<ul>
-		<li><a href="path_for: {path_for name="profile" options=["name" => "josh"]}">Josh</a></li>
+		<li><a href="{path_for name="profile" options=["name" => "josh"]}">Josh</a></li>
 	</ul>
 	{/block}
 
@@ -72,4 +72,4 @@ This component is strongly based on the offical slim/twig-view
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
