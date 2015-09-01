@@ -1,5 +1,5 @@
 {
-    "name": "slim/smarty-view",
+    "name": "maps82/smarty-view",
     "type": "library",
     "description": "Slim Framework view helper built on top of the Smarty templating engine",
     "keywords": ["slim","framework","view","template","smarty"],
