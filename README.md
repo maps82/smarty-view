@@ -4,7 +4,11 @@ This is a Slim Framework view helper built on top of the Smarty templating compo
 
 ## Install
 
-Soon via composer...
+Via [Composer](https://getcomposer.org/)
+
+```bash
+$ composer require maps82/smarty-view
+```
 
 Requires Slim Framework 3.
 
