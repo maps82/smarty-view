@@ -23,27 +23,27 @@ $container = $app->getContainer();
 
 // Register Smarty View helper
 $container['view'] = function ($c) {
-	$view = new \Slim\Views\Smarty('path/to/templates', [
-		'compile' => 'path/to/compile',
-		'config' => 'path/to/config',
-		'cache' => 'path/to/cache',
-		'debug' => true
-	]);
-	
-	// Instantiate and add Slim specific extension
-	$view->addExtension(new Slim\Views\SmartyExtension(
-		$c['router'],
-		$c['request']->getUri()
-	));
+    $view = new \Slim\Views\Smarty('path/to/templates', [
+        'compile' => 'path/to/compile',
+        'config' => 'path/to/config',
+        'cache' => 'path/to/cache',
+        'debug' => true
+    ]);
+    
+    // Instantiate and add Slim specific extension
+    $view->addExtension(new Slim\Views\SmartyExtension(
+        $c['router'],
+        $c['request']->getUri()
+    ));
 
-	return $view;
+    return $view;
 };
 
 // Define named route
 $app->get('/hello/{name}', function ($request, $response, $args) {
-	return $this->view->render($response, 'profile.tpl', [
-		'name' => $args['name']
-	]);
+    return $this->view->render($response, 'profile.tpl', [
+        'name' => $args['name']
+    ]);
 })->setName('profile');
 
 // Run app
@@ -54,14 +54,14 @@ $app->run();
 
 This component exposes a custom `path_for` function to your Smarty templates. You can use this function to generate complete URLs to any Slim application named route. This is an example Smarty template:
 
-	{extends "layout.tpl"}
+    {extends "layout.tpl"}
 
-	{block name="body"}
-	<h1>User List</h1>
-	<ul>
-		<li><a href="{path_for name="profile" options=["name" => "josh"]}">Josh</a></li>
-	</ul>
-	{/block}
+    {block name="body"}
+    <h1>User List</h1>
+    <ul>
+        <li><a href="{path_for name="profile" options=["name" => "josh"]}">Josh</a></li>
+    </ul>
+    {/block}
 
 
 ## Credits
