@@ -1,7 +1,7 @@
 {
     "name": "maps82/smarty-view",
     "type": "library",
-    "description": "Slim Framework view helper built on top of the Smarty templating engine",
+    "description": "Slim Framework view helper built on top of the Smarty template engine",
     "keywords": ["slim","framework","view","template","smarty"],
     "license": "MIT",
     "authors": [

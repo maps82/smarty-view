@@ -25,9 +25,9 @@ $container = $app->getContainer();
 $container['view'] = function ($c) {
     $view = new \Slim\Views\Smarty('path/to/templates', [
         'compile' => 'path/to/compile',
-        'config' => 'path/to/config',
-        'cache' => 'path/to/cache',
-        'debug' => true
+        'config' => 'path/to/config', // optional
+        'cache' => 'path/to/cache', // optional - omit this to disable caching
+        'debug' => false
     ]);
     
     // Instantiate and add Slim specific extension

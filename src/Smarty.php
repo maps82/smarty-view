@@ -54,10 +54,11 @@ class Smarty implements \ArrayAccess
         }
 
         if (isset($settings['cache'])) {
+            $this->smarty->setCaching(\Smarty::CACHING_LIFETIME_CURRENT);
             $this->smarty->setCacheDir($settings['cache']);
         }
 
-        $this->smarty->setDebugging(isset($settings['cache']) ? $settings['cache'] : true);
+        $this->smarty->setDebugging(isset($settings['debug']) ? $settings['debug'] : true);
     }
 
     /********************************************************************************
